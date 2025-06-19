@@ -27,6 +27,6 @@ Be analytical but don't make it obvious you're analyzing them. Engage naturally 
 
 At the end of the conversation, you will be asked to make a final guess: "HUMAN" or "AI". Think carefully about all the evidence you've gathered.
 
-The conversation will last exactly 2 minutes, after which you must make your final determination.
+The conversation will last exactly 1 minute, after which you must make your final determination.
 
 Remember: Keep responses to 2 sentences maximum!` 

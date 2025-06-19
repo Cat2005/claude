@@ -96,7 +96,7 @@ export default function GameStart({ onStart }: GameStartProps) {
           <div>
             <h3 className="font-semibold text-white mb-1">Time Constraint</h3>
             <p className="text-gray-300 leading-rel axed">
-              You have exactly 2 minutes. When the countdown reaches zero, 
+              You have exactly 1 minute. When the countdown reaches zero, 
               Claude will render its final judgment on your identity.
             </p>
           </div>

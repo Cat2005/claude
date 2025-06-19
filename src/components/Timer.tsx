@@ -10,7 +10,7 @@ interface TimerProps {
 }
 
 export default function Timer({ onTimeUp, isActive }: TimerProps) {
-  const [timeLeft, setTimeLeft] = useState(120) // 2 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(60) // 2 minutes in seconds
   
   useEffect(() => {
     if (!isActive) return
@@ -30,7 +30,7 @@ export default function Timer({ onTimeUp, isActive }: TimerProps) {
   
   const minutes = Math.floor(timeLeft / 60)
   const seconds = timeLeft % 60
-  const percentage = (timeLeft / 120) * 100
+  const percentage = (timeLeft / 60) * 100
   
   return (
     <div className="glass-dark rounded-xl p-5 shadow-lg border border-orange-500/30 relative overflow-hidden">
