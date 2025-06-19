@@ -1,6 +1,7 @@
 'use client'
 
 import { Trophy, X, RotateCcw, Bot, Shield, Target } from 'lucide-react'
+import Image from 'next/image'
 
 interface GameEndProps {
   claudeGuess: string
@@ -12,7 +13,53 @@ export default function GameEnd({ claudeGuess, onRestart }: GameEndProps) {
   const isError = claudeGuess === 'ERROR'
   
   return (
-    <div className="glass-dark rounded-3xl shadow-2xl p-8 text-center max-w-2xl mx-auto border border-orange-500/20">
+    <div className="glass-dark rounded-3xl shadow-2xl p-8 text-center max-w-2xl mx-auto border border-orange-500/20 relative overflow-hidden">
+      {/* Claude logos scattered around the end screen */}
+      <div className="absolute top-8 left-6 opacity-4 pointer-events-none">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={22} 
+          height={22}
+          className="rotate-45"
+        />
+      </div>
+      <div className="absolute bottom-12 right-12 opacity-3 pointer-events-none">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={26} 
+          height={26}
+          className="-rotate-60"
+        />
+      </div>
+      <div className="absolute top-1/4 right-8 opacity-2 pointer-events-none">
+        <Image 
+          src="/claude-big-logo.png" 
+          alt="Claude Logo" 
+          width={80} 
+          height={80}
+          className="rotate-12"
+        />
+      </div>
+      <div className="absolute bottom-1/4 left-4 opacity-5 pointer-events-none">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={16} 
+          height={16}
+          className="rotate-90"
+        />
+      </div>
+      <div className="absolute top-16 right-20 opacity-6 pointer-events-none">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={12} 
+          height={12}
+          className="-rotate-30"
+        />
+      </div>
       <div className="mb-8">
         <div className="flex justify-center mb-6">
           <div className={`p-6 rounded-full shadow-lg ${

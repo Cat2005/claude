@@ -121,8 +121,37 @@ export default function ChatInterface({ onGameEnd }: ChatInterfaceProps) {
   }
   
   return (
-    <div className="glass-dark rounded-3xl shadow-2xl overflow-hidden max-w-4xl mx-auto h-[80vh] flex flex-col border border-orange-500/20">
-      <div className="gradient-anthropic p-6 border-b border-orange-500/30 relative">
+    <div className="glass-dark rounded-3xl shadow-2xl overflow-hidden max-w-4xl mx-auto h-[80vh] flex flex-col border border-orange-500/20 relative">
+      {/* Scattered Claude logos around the chat interface */}
+      <div className="absolute top-20 left-6 opacity-3 pointer-events-none z-0">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={20} 
+          height={20}
+          className="rotate-12"
+        />
+      </div>
+      <div className="absolute bottom-32 right-8 opacity-4 pointer-events-none z-0">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={16} 
+          height={16}
+          className="-rotate-45"
+        />
+      </div>
+      <div className="absolute top-1/3 right-4 opacity-2 pointer-events-none z-0">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={28} 
+          height={28}
+          className="rotate-90"
+        />
+      </div>
+      
+      <div className="gradient-anthropic p-6 border-b border-orange-500/30 relative z-10">
         <div className="absolute top-4 right-4">
           <Image 
             src="/claude-small-logo.png" 
@@ -132,10 +161,38 @@ export default function ChatInterface({ onGameEnd }: ChatInterfaceProps) {
             className="opacity-80"
           />
         </div>
+        <div className="absolute top-2 left-6 opacity-40">
+          <Image 
+            src="/claude-small-logo.png" 
+            alt="Claude Logo" 
+            width={12} 
+            height={12}
+            className="rotate-45"
+          />
+        </div>
         <Timer onTimeUp={handleTimeUp} isActive={gameActive} />
       </div>
       
-      <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gray-900/50">
+      <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gray-900/50 relative">
+        {/* More scattered logos in the chat area */}
+        <div className="absolute top-16 right-12 opacity-2 pointer-events-none">
+          <Image 
+            src="/claude-small-logo.png" 
+            alt="Claude Logo" 
+            width={18} 
+            height={18}
+            className="rotate-12"
+          />
+        </div>
+        <div className="absolute bottom-20 left-8 opacity-3 pointer-events-none">
+          <Image 
+            src="/claude-small-logo.png" 
+            alt="Claude Logo" 
+            width={14} 
+            height={14}
+            className="-rotate-30"
+          />
+        </div>
         {messages.map((message) => (
           <div
             key={message.id}

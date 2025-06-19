@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Clock, AlertTriangle } from 'lucide-react'
+import Image from 'next/image'
 
 interface TimerProps {
   onTimeUp: () => void
@@ -32,7 +33,26 @@ export default function Timer({ onTimeUp, isActive }: TimerProps) {
   const percentage = (timeLeft / 120) * 100
   
   return (
-    <div className="glass-dark rounded-xl p-5 shadow-lg border border-orange-500/30">
+    <div className="glass-dark rounded-xl p-5 shadow-lg border border-orange-500/30 relative overflow-hidden">
+      {/* Tiny Claude logos floating around the timer */}
+      <div className="absolute top-1 right-2 opacity-20 pointer-events-none">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={8} 
+          height={8}
+          className="rotate-45"
+        />
+      </div>
+      <div className="absolute bottom-2 left-1 opacity-15 pointer-events-none">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={10} 
+          height={10}
+          className="-rotate-30"
+        />
+      </div>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-3">
           <Clock className="h-6 w-6 text-orange-400" />
