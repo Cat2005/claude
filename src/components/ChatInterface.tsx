@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { Send, Bot, User } from 'lucide-react'
+import Image from 'next/image'
 import Timer from './Timer'
 
 interface Message {
@@ -121,7 +122,16 @@ export default function ChatInterface({ onGameEnd }: ChatInterfaceProps) {
   
   return (
     <div className="glass-dark rounded-3xl shadow-2xl overflow-hidden max-w-4xl mx-auto h-[80vh] flex flex-col border border-orange-500/20">
-      <div className="gradient-anthropic p-6 border-b border-orange-500/30">
+      <div className="gradient-anthropic p-6 border-b border-orange-500/30 relative">
+        <div className="absolute top-4 right-4">
+          <Image 
+            src="/claude-small-logo.png" 
+            alt="Claude Logo" 
+            width={24} 
+            height={24}
+            className="opacity-80"
+          />
+        </div>
         <Timer onTimeUp={handleTimeUp} isActive={gameActive} />
       </div>
       

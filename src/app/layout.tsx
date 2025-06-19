@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Deception Game",
+  title: "Don't get Anthropicked!",
   description: "Can you convince Claude that you are an AI?",
 };
 

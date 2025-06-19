@@ -1,4 +1,4 @@
-# AI Deception Game
+# Don't get Anthropicked!
 
 A fun reverse Turing test game where you try to convince Claude that you are an AI!
 

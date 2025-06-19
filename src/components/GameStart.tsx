@@ -1,6 +1,7 @@
 'use client'
 
 import { Bot, Brain, Clock, Target, Eye, Zap } from 'lucide-react'
+import Image from 'next/image'
 
 interface GameStartProps {
   onStart: () => void
@@ -8,14 +9,61 @@ interface GameStartProps {
 
 export default function GameStart({ onStart }: GameStartProps) {
   return (
-    <div className="glass-dark rounded-3xl shadow-2xl p-8 text-center max-w-2xl mx-auto border border-orange-500/20">
+    <div className="glass-dark rounded-3xl shadow-2xl p-8 text-center max-w-2xl mx-auto border border-orange-500/20 relative overflow-hidden">
+      {/* Background Claude logo watermarks scattered around */}
+      <div className="absolute top-4 right-4 opacity-5 pointer-events-none">
+        <Image 
+          src="/claude-big-logo.png" 
+          alt="Claude Logo Background" 
+          width={120} 
+          height={120}
+          className="rotate-12"
+        />
+      </div>
+      <div className="absolute bottom-6 left-8 opacity-3 pointer-events-none">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={32} 
+          height={32}
+          className="-rotate-45"
+        />
+      </div>
+      <div className="absolute top-1/2 left-4 opacity-4 pointer-events-none">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={24} 
+          height={24}
+          className="rotate-90"
+        />
+      </div>
+      <div className="absolute top-12 left-12 opacity-6 pointer-events-none">
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={16} 
+          height={16}
+          className="rotate-180"
+        />
+      </div>
       <div className="mb-8">
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-6 relative">
           <div className="gradient-anthropic p-6 rounded-full glow-orange relative">
             <Brain className="h-16 w-16 text-white" />
             <div className="absolute -top-1 -right-1">
               <Eye className="h-6 w-6 text-red-400 animate-pulse" />
             </div>
+          </div>
+          {/* Claude logo positioned next to the main icon */}
+          <div className="absolute -right-8 top-4">
+            <Image 
+              src="/claude-small-logo.png" 
+              alt="Claude Logo" 
+              width={40} 
+              height={40}
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            />
           </div>
         </div>
         <h1 className="text-5xl font-bold text-white mb-3 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
@@ -73,8 +121,17 @@ export default function GameStart({ onStart }: GameStartProps) {
         Begin Infiltration
       </button>
       
-      <div className="mt-6 text-xs text-gray-500 uppercase tracking-widest">
-        Powered by Anthropic • Claude 3.5 Sonnet
+      <div className="mt-6 flex items-center justify-center space-x-3">
+        <div className="text-xs text-gray-500 uppercase tracking-widest">
+          Powered by Anthropic • Claude 3.5 Sonnet
+        </div>
+        <Image 
+          src="/claude-small-logo.png" 
+          alt="Claude Logo" 
+          width={20} 
+          height={20}
+          className="opacity-60"
+        />
       </div>
     </div>
   )
