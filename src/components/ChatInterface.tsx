@@ -205,11 +205,17 @@ export default function ChatInterface({ onGameEnd }: ChatInterfaceProps) {
                 message.sender === 'user' 
                   ? 'gradient-anthropic shadow-lg shadow-orange-500/30' 
                   : 'bg-gray-600 border border-gray-500'
-              } rounded-full p-3`}>
+              } rounded-full p-3 flex items-center justify-center`}>
                 {message.sender === 'user' ? (
                   <User className="h-5 w-5 text-white" />
                 ) : (
-                  <Bot className="h-5 w-5 text-orange-400" />
+                  <Image 
+                    src="/claude-small-logo.png" 
+                    alt="Claude" 
+                    width={20} 
+                    height={20}
+                    className="opacity-90"
+                  />
                 )}
               </div>
               <div className={`rounded-2xl px-5 py-3 shadow-lg ${
@@ -224,11 +230,17 @@ export default function ChatInterface({ onGameEnd }: ChatInterfaceProps) {
         ))}
         
         {isLoading && (
-          <div className="flex justify-start">
-            <div className="flex items-start max-w-xs lg:max-w-md space-x-3">
-              <div className="bg-gray-600 border border-gray-500 rounded-full p-3">
-                <Bot className="h-5 w-5 text-orange-400" />
-              </div>
+                      <div className="flex justify-start">
+              <div className="flex items-start max-w-xs lg:max-w-md space-x-3">
+                <div className="bg-gray-600 border border-gray-500 rounded-full p-3 flex items-center justify-center">
+                  <Image 
+                    src="/claude-small-logo.png" 
+                    alt="Claude" 
+                    width={20} 
+                    height={20}
+                    className="opacity-90"
+                  />
+                </div>
               <div className="bg-gray-800 border border-gray-700 rounded-2xl px-5 py-3 shadow-lg">
                 <div className="flex space-x-1">
                   <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce"></div>
